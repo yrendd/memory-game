@@ -1,5 +1,5 @@
 const board = document.getElementById("board");
-const muzik = new Audio("/sounds/yanre.mp3");
+const muzik = new Audio("/memory-game/sounds/yanre.mp3"); // local'de calismasi icin memory-game kismini kaldirmam lazim
 // muzik.play();
 let isPlaying = false;
 // let isPlaying = false;

@@ -1,61 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MEMORY GAME</title>
-    <link rel="stylesheet" href="styles/reset.css" />
-    <link rel="stylesheet" href="styles/style.css" />
-  </head>
-  <body>
-    <div class="container game_container">
-      <div class="pageTop">
-        <div class="game_container dropdown">
-          <button class="game_container dropbtn" id="menuButton">MENU</button>
 
-          <div class="game_container dropdown-content">
-            <button id="durdurButton">Oyunu Durdur</button>
-            <button id="yenidenBaslatButton">Yeniden Başlat</button>
-            <button id="oyunuBitirButton">Oyunu Bitir</button>
-            <button id="karistirButton">Karistir</button>
-            <button id="surdurButton">Surdur</button>
-          </div>
-        </div>
-        <div class="sure">
-          <div class="inside">
-            <p id="dakika">00</p>
-          </div>
-          <div class="inside">
-            <p id="saniye">.00</p>
-          </div>
-        </div>
-        <div class="ses">
-          <button class="ses_button">
-            <img
-              id="sesAcik"
-              src="public/images/sesicon1.png"
-              alt="ses"
-              width="30px"
-              height="30px"
-            />
-            <img
-              id="sesKapali"
-              src="public/images/sesKapaliicon2.png"
-              alt="ses"
-              width="30px"
-              height="30px"
-              class="hidden"
-            />
-          </button>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MEMORY GAME</title>
+  <link rel="stylesheet" href="styles/reset.css" />
+  <link rel="stylesheet" href="styles/style.css" />
+</head>
+
+<body>
+  <div class="container game_container">
+    <div class="pageTop">
+      <div class="game_container dropdown">
+        <button class="game_container dropbtn" id="menuButton">MENU</button>
+
+        <div class="game_container dropdown-content">
+          <button id="durdurButton">Oyunu Durdur</button>
+          <button id="yenidenBaslatButton">Yeniden Başlat</button>
+          <button id="oyunuBitirButton">Oyunu Bitir</button>
+          <button id="karistirButton">Karistir</button>
+          <button id="surdurButton">Surdur</button>
         </div>
       </div>
-
-      <div class="game_container_board" id="board"></div>
+      <div class="sure">
+        <div class="inside">
+          <p id="dakika">00</p>
+        </div>
+        <div class="inside">
+          <p id="saniye">.00</p>
+        </div>
+      </div>
+      <div class="ses">
+        <button class="ses_button">
+          <img id="sesAcik" src="public/images/sesicon1.png" alt="ses" width="30px" height="30px" class="hidden" />
+          <img id="sesKapali" src="public/images/sesKapaliicon2.png" alt="ses" width="30px" height="30px" />
+        </button>
+      </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/Flip.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="js/main.js"></script>
-  </body>
+    <div class="game_container_board" id="board"></div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/Flip.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
 </html>

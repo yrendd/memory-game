@@ -1,7 +1,7 @@
 const board = document.getElementById("board");
 const muzik = new Audio("/sounds/yanre.mp3");
-muzik.play();
-let isPlaying = true;
+// muzik.play();
+let isPlaying = false;
 // let isPlaying = false;
 let numbers = [];
 let selectedCards = [];

@@ -1,0 +1,289 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap");
+
+:root {
+  --backgroundcolor: #bcbaba;
+}
+
+body {
+  min-height: 100vh; /* Sayfanın tam yüksekliğini kapsar */
+  height: 100%;
+  display: grid;
+  place-items: center;
+  background-color: var(--backgroundcolor);
+  font-family: "Bebas Neue", sans-serif;
+  text-align: center;
+}
+
+.container {
+  min-width: 700px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .container_start {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .button_start {
+      width: 100px;
+      height: 100px;
+      background-color: black;
+      font-size: 30px;
+      color: yellow;
+      cursor: pointer;
+      transition: all 0.2s ease-in-out;
+
+      &.active {
+        background-color: red;
+      }
+    }
+  }
+}
+
+.game_container {
+  position: relative;
+  .pageTop {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    gap: 20px;
+  }
+  .dropbtn {
+    background-color: black;
+    color: yellow;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+  }
+
+  .dropdown {
+    position: relative;
+    display: flex;
+    display: inline-block;
+
+    .dropdown-content {
+      display: none;
+      width: 100%;
+      position: absolute;
+      /* background-color: yellow; */
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+      border: none;
+      cursor: pointer;
+
+      #oyunuBitirButton {
+        width: 100%;
+        display: flex;
+        align-items: first baseline;
+        border: none;
+        cursor: pointer;
+        background-color: #f9f9f9;
+
+        &:hover {
+          background-color: yellow;
+        }
+      }
+
+      #durdurButton {
+        width: 100%;
+        display: flex;
+        align-items: first baseline;
+        border: none;
+        cursor: pointer;
+        background-color: #f9f9f9;
+
+        &:hover {
+          background-color: yellow;
+        }
+      }
+
+      #yenidenBaslatButton {
+        width: 100%;
+        display: flex;
+        align-items: first baseline;
+        border: none;
+        cursor: pointer;
+        background-color: #f9f9f9;
+
+        &:hover {
+          background-color: yellow;
+        }
+      }
+
+      #karistirButton {
+        width: 100%;
+        display: flex;
+        align-items: first baseline;
+        border: none;
+        cursor: pointer;
+        background-color: #f9f9f9;
+
+        &:hover {
+          background-color: yellow;
+        }
+      }
+
+      #surdurButton {
+        width: 100%;
+        display: flex;
+        align-items: first baseline;
+        border: none;
+        cursor: pointer;
+        background-color: #f9f9f9;
+
+        &:hover {
+          background-color: yellow;
+        }
+      }
+
+      a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+
+        &:hover {
+          background-color: #f1f1f1;
+        }
+      }
+    }
+
+    &:hover .dropdown-content {
+      display: block;
+    }
+
+    &:hover .dropbtn {
+      background-color: #f1f1f1;
+      color: black;
+    }
+  }
+
+  .sure {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+  }
+
+  .ses {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .ses_button {
+    background-color: var(--backgroundcolor);
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+  }
+  .game_container_board {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    background-color: var(--backgroundcolor);
+    color: white;
+    border: none;
+
+    .hidden {
+      color: transparent;
+    }
+
+    .revealed {
+      color: black;
+    }
+
+    .game_board_item {
+      width: 70px;
+      height: 70px;
+      background-color: yellow;
+      border: none;
+      border-radius: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      will-change: transform;
+
+      font-size: 35px;
+      font-family: "Comic Neue", cursive;
+      font-weight: 300px;
+
+      perspective: 800px;
+      transform-style: preserve-3d;
+      /* transform: rotateY(180deg); */
+      /* transition: transform 0.5s ease-in-out; */
+
+      position: relative;
+      &.turn {
+        /* transform: rotateY(180deg); */
+      }
+
+      .game_board_item_front {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        transform: rotateY(180deg);
+      }
+
+      .game_board_item_back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: yellow;
+        border: none;
+        border-radius: 10px;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        /* transform: rotateY(180deg); */
+      }
+    }
+
+    &:hover {
+      border: none;
+      border-radius: 10px;
+    }
+  }
+}
+
+.game_container_oyunBitti {
+  position: absolute;
+  min-width: 300px;
+  height: 200px;
+  /* display: flex; */
+  flex-direction: column;
+  align-items: center;
+  background-color: black;
+  z-index: 1000;
+
+  font-size: 25px;
+  color: white;
+}
+
+.game_container_oyunBitti_button {
+  width: auto;
+  padding: 10px;
+  background-color: yellow;
+  font-size: 20px;
+  color: black;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.hidden {
+  display: none;
+}
+
+.flipping {
+  /* transform: rotateY(0) !important; */
+  background-color: blue !important;
+}
